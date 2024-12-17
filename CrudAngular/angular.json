@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "CrudAngular": {
+    "crudAngular": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:class": {
@@ -52,7 +52,12 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "server": "src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "server.ts"
+            }
           },
           "configurations": {
             "production": {
@@ -82,10 +87,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "CrudAngular:build:production"
+              "buildTarget": "crudAngular:build:production"
             },
             "development": {
-              "buildTarget": "CrudAngular:build:development"
+              "buildTarget": "crudAngular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -93,7 +98,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "CrudAngular:build"
+            "buildTarget": "crudAngular:build"
           }
         },
         "test": {

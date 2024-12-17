@@ -1,0 +1,16 @@
+<div class="grid grid-cols-3">
+  <p>total {{total()}}</p>
+
+
+    <a [routerLink]="['/product', product.id]"  >
+      <img [src]="product.images[0]" alt="image">
+    </a>
+
+
+  <h3>{{product.title | uppercase }}</h3>
+  <p>{{product.price }}</p>
+  <p>{{product.creationAt}}</p>
+  <button (click)="addToCartHandler()">add to cart</button>
+
+
+</div>
